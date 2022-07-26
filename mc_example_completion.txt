@@ -1,0 +1,15 @@
+Text: 
+   
+	 The Viking Age generally refers to the period from A.D. 800, a few years after the earliest recorded raid, until the 1050s, a few years before the Norman 
+Conquest of England in 1066, according to Angelo Forte, Richard D. Oram and Frederik Pedersen, authors of "Viking Empires" (Cambridge University Press, 2005). 
+During this time, the reach of the Scandinavian people extended to all corners of northern Europe, and many other nations found Vikings raiding their coasts. 
+The farthest reported records of Vikings were in Baghdad for the trading of goods like fur, tusks and seal fat. 
+
+completion: 
+
+What is the definition of 'Viking Age' as used in this context? The Viking Age generally refers to the period …?
+A. from A.D. 800 to the Norman Conquest of England in 1066.
+B. for a few years after the earliest recorded raid.
+C. a few years before the Norman Conquest of England in 1066.
+D. a few years after the earliest recorded raid in the Viking Age.
+Answer: A
