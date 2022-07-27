@@ -7,46 +7,56 @@ SQ_url = "https://shared-api.forefront.link/organization/9aDsThyuopVF/gpt-j-6b-v
 # User inputs
 key = input("Enter API-Key: ")
 
-txt = input("Paste Your Input Text Here: ")
+stop = False
+while not stop:
+  txt = input("Paste Your Input Text Here: ")
 
-choice = input("Enter \"MC\" For Multiple-Choice, \"SQ\" For Short Question: ")
-url = ""
-if choice == "MC":
-    url = MC_url
-elif choice == "SQ":
-    url = SQ_url
-else:
+  choice = input("Enter \"MC\" For Multiple-Choice, \"SQ\" For Short Question: ")
+  url = ""
+  if choice == "MC":
+      url = MC_url
+  elif choice == "SQ":
+      url = SQ_url
+  else:
+      raise Exception("Invalid Choice")
+
+  authorization = "Bearer " + key
+  headers = {
+    "Authorization": authorization,
+    "Content-Type": "application/json"
+  }
+
+  body = {
+    "text": txt,
+    "top_p": 1,
+    "top_k": 40,
+    "temperature": 0.8,
+    "repetition_penalty":  1,
+    "length": 100,
+    "stop_sequences": ["bird"]
+  }
+
+  res = requests.post(
+    url,
+    json=body,
+    headers=headers
+  )
+
+  data = res.json()
+
+  completion = data['result'][0]['completion']
+
+  print(completion)
+
+  file = open("outputs.txt", "a")
+  file.write(completion)
+  file.write('\n')
+  file.close()
+
+  inp = input("Continue requesting? \"YES\" \"NO\" ")
+  if inp == "YES":
+    pass
+  elif inp == "NO":
+    stop = True
+  else:
     raise Exception("Invalid Choice")
-
-authorization = "Bearer " + key
-headers = {
-  "Authorization": authorization,
-  "Content-Type": "application/json"
-}
-
-body = {
-  "text": txt,
-  "top_p": 1,
-  "top_k": 40,
-  "temperature": 0.8,
-  "repetition_penalty":  1,
-  "length": 100,
-  "stop_sequences": ["bird"]
-}
-
-res = requests.post(
-  url,
-  json=body,
-  headers=headers
-)
-
-data = res.json()
-
-completion = data['result'][0]['completion']
-
-print(completion)
-
-file = open("outputs.txt", "a")
-file.write(completion)
-file.write('\n')
-file.close()
