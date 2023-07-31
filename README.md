@@ -11,7 +11,7 @@ and requesting a short-question, gave us the completion below:
 > Answer: Theory of Relativity.
 
 ## Requesting a completion
-GPT-J-6B requires immense computational power to load, hence running it on one's PC is not ideal. Using a secret API Key (not provided), one can input a passage and request a model-generated quiz, see `request_demo.ipynb` for example. The seperator `Outline:` at the end of the given passage is necessary for the model to function accordingly.
+GPT-J-6B requires immense computational power to load, hence running it on one's PC is not ideal. Using a secret API Key (not provided), one can input a passage and request a model-generated quiz, see `request_demo.ipynb` for example. The separator `Outline:` at the end of the given passage is necessary for the model to function accordingly.
 
 **URL for request:**
 
